@@ -1,0 +1,132 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://source.unsplash.com/random/1920x1080/?nature,water') no-repeat center center fixed;
+  background-size: 100% 100%;
+  color: #fff;
+  min-height: 100vh; /* Change this line */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  text-align: center;
+  overflow: auto; /* Add this line */
+}
+
+h1 {
+  color: #074c8f;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.quote-section {
+  margin-top: 30px;
+}
+
+.quote-display {
+  margin-top: 30px;
+}
+
+.quote-card {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  color: #000;
+}
+
+.quote-card::before,
+.quote-card::after {
+  content: '“';
+  font-size: 4rem;
+  color: #ffc107;
+  position: absolute;
+  line-height: 0.6;
+  font-family: serif;
+}
+
+.quote-card::after {
+  content: '”';
+  right: 10px;
+  bottom: -10px;
+}
+
+.quote-card::before {
+  left: 10px;
+  top: -10px;
+}
+
+.blockquote-footer {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.btn-generate {
+  font-size: 1.2rem;
+  background-color: #17a2b8;
+  border: none;
+}
+
+.btn-generate:hover {
+  background-color: #138496;
+}
+
+.btn-email {
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-email:hover {
+  background-color: #218838;
+}
+
+.btn-send {
+  margin-top: 10px;
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-cancel {
+  margin-top: 10px;
+  background-color: #dc3545;
+  border: none;
+  margin-left: 5px;
+}
+
+.email-zone {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.email-zone.active {
+  display: block;
+}
+
+.email-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.warning {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  text-align: left;
+}

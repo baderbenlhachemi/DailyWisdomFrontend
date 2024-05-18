@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Wisdom</title>
+  <link rel="stylesheet" href="main.component.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+  <img src="assets/img/logo.png"/>
+  <div class="quote-section">
+    <button class="btn btn-primary btn-generate" (click)="generateQuote()">Generate Quote</button>
+  </div>
+  <div class="quote-display" *ngIf="quote">
+    <div class="quote-card">
+      <p class="mb-0">{{ quote.content }}</p>
+      <footer class="blockquote-footer text-end">{{ quote.author }}</footer>
+    </div>
+    <button class="btn btn-success btn-email" (click)="toggleEmailZone()">Email to a Friend</button>
+    <div class="email-zone" [ngClass]="{ 'active': emailZoneActive }">
+      <div class="email-input-container">
+        <input type="email" class="form-control" placeholder="Friend's Email" [formControl]="email">
+        <div *ngIf="email.errors?.['required']" class="warning">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors?.['email']" class="warning">
+          Invalid email.
+        </div>
+      </div>
+      <button class="btn btn-success btn-send" (click)="sendEmail()" [disabled]="email.invalid">Send</button>
+      <button class="btn btn-danger btn-cancel" (click)="cancelEmail()">Cancel</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<footer class="blockquote-footer text-end">
+  Created by <a href="https://github.com/baderbenlhachemi">Bader Eddine Ben-Lhachemi</a>
+</footer>
+
+</html>
