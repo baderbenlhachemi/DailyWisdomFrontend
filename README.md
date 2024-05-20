@@ -13,3 +13,5 @@ The Daily Wisdom App frontend is responsible for displaying random quotes genera
 ## Deployment
 
 The frontend of the Daily Wisdom App is deployed on GitLab Pages and can be accessed through the following link: [https://baderbenlhachemi.github.io/DailyWisdomFrontend/](https://baderbenlhachemi.github.io/DailyWisdomFrontend/)
+
+**Disclaimer**: The backend of the Daily Wisdom App is hosted on a free instance provided by Render. Please note that due to the nature of the free instance, it may spin down during periods of inactivity. This could potentially delay the initial request by 50 seconds or more.
