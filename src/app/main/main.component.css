@@ -1,9 +1,9 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('https://source.unsplash.com/random/1920x1080/?nature,water') no-repeat center center fixed;
-  background-size: 100% 100%;
+  background-size: cover;
   color: #fff;
-  min-height: 100vh; /* Change this line */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,13 +11,13 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 100%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   text-align: center;
-  overflow: auto; /* Add this line */
+  overflow: auto;
 }
 
 h1 {
@@ -119,8 +119,9 @@ h1 {
 .email-input-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 60%;
+  align-items: center; /* Center align items */
+  width: 100%; /* Change to 100% for responsiveness */
+  max-width: 400px; /* Limit max width */
   margin: 0 auto;
 }
 
@@ -129,4 +130,23 @@ h1 {
   font-size: 0.8rem;
   margin-top: 5px;
   text-align: left;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .quote-card {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .btn-generate,
+  .btn-email,
+  .btn-send,
+  .btn-cancel {
+    font-size: 1rem;
+  }
+  .email-input-container {
+    width: 90%;
+  }
 }
