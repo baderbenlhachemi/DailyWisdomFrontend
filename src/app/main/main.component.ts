@@ -1,20 +1,35 @@
-import { Component } from '@angular/core';
-import { QuoteService } from '../quote.service';
-import { FormControl, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {QuoteService} from '../quote.service';
+import {FormControl, Validators} from '@angular/forms';
 import Swal from 'sweetalert2';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
   quote: any;
   email = new FormControl('', [Validators.required, Validators.email]);
   emailZoneActive: boolean = false;
 
   constructor(private quoteService: QuoteService) { }
+
+  ngOnInit() {
+    this.autoDismissAlert();
+  }
+
+  autoDismissAlert() {
+    setTimeout(() => {
+      const alertElement = document.getElementById('backendAlert');
+      if (alertElement) {
+        const bsAlert = new bootstrap.Alert(alertElement);
+        bsAlert.close();
+      }
+    }, 15000); // 15 seconds
+  }
 
   generateQuote() {
     this.quoteService.getRandomQuote().subscribe(

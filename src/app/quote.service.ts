@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class QuoteService {
 
   //private apiUrl = 'http://localhost:8080/api/quotes';
-  private apiUrl = 'https://dailywisdombackend.onrender.com/api/quotes'
+  private apiUrl = 'https://daily-wisdom-springboot.onrender.com/api/quotes'
 
   constructor(private http: HttpClient) { }
 

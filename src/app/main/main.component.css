@@ -11,9 +11,9 @@ body {
 }
 
 .container {
-  max-width: 100%;
+  max-width: 95%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.85); /* Increased opacity for better readability */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   text-align: center;
@@ -73,37 +73,72 @@ h1 {
   font-size: 1rem;
 }
 
-.btn-generate {
+/* Button Styles */
+button {
   font-size: 1.2rem;
-  background-color: #17a2b8;
   border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-generate {
+  background: linear-gradient(45deg, #17a2b8, #138496);
 }
 
 .btn-generate:hover {
-  background-color: #138496;
+  background: linear-gradient(45deg, #138496, #117a8b);
 }
 
 .btn-email {
+  background: linear-gradient(45deg, #007bff, #0056b3);
   margin-top: 10px;
-  background-color: #007bff;
-  border: none;
 }
 
 .btn-email:hover {
-  background-color: #218838;
+  background: linear-gradient(45deg, #0056b3, #004085);
 }
 
 .btn-send {
+  background: linear-gradient(45deg, #28a745, #218838);
   margin-top: 10px;
-  background-color: #28a745;
-  border: none;
+}
+
+.btn-send:hover {
+  background: linear-gradient(45deg, #218838, #1e7e34);
 }
 
 .btn-cancel {
+  background: linear-gradient(45deg, #dc3545, #c82333);
   margin-top: 10px;
-  background-color: #dc3545;
-  border: none;
   margin-left: 5px;
+}
+
+.btn-cancel:hover {
+  background: linear-gradient(45deg, #c82333, #bd2130);
+}
+
+/* Enhanced Email Input Styles */
+.email-input-container input {
+  font-size: 1rem;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  max-width: 400px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.email-input-container input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .email-zone {
@@ -119,9 +154,9 @@ h1 {
 .email-input-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align items */
-  width: 100%; /* Change to 100% for responsiveness */
-  max-width: 400px; /* Limit max width */
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -140,10 +175,7 @@ h1 {
     padding: 10px;
     font-size: 1rem;
   }
-  .btn-generate,
-  .btn-email,
-  .btn-send,
-  .btn-cancel {
+  button {
     font-size: 1rem;
   }
   .email-input-container {

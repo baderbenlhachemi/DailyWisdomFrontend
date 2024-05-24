@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +10,23 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container mt-4">
+  <!-- Notification Alert -->
+  <div id="backendAlert" class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>Notice:</strong> Our backend is hosted on a free Render instance. If the app seems slow to respond initially, it might be waking up from sleep mode. Thanks for your patience!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
   <img src="assets/img/logo.png" class="img-fluid" alt="Logo"/>
   <div class="quote-section">
-    <button class="btn btn-primary btn-generate" (click)="generateQuote()">Generate Quote</button>
+    <button class="btn btn-generate" (click)="generateQuote()">Get Inspired</button>
   </div>
   <div class="quote-display" *ngIf="quote">
     <div class="quote-card">
       <p class="mb-0">{{ quote.content }}</p>
       <footer class="blockquote-footer text-end">{{ quote.author }}</footer>
     </div>
-    <button class="btn btn-success btn-email" (click)="toggleEmailZone()">Email to a Friend</button>
+    <button class="btn btn-email" (click)="toggleEmailZone()">Email to a Friend</button>
     <div class="email-zone" [ngClass]="{ 'active': emailZoneActive }">
       <div class="email-input-container">
         <input type="email" class="form-control" placeholder="Friend's Email" [formControl]="email">
@@ -32,8 +37,8 @@
           Invalid email.
         </div>
       </div>
-      <button class="btn btn-success btn-send" (click)="sendEmail()" [disabled]="email.invalid">Send</button>
-      <button class="btn btn-danger btn-cancel" (click)="cancelEmail()">Cancel</button>
+      <button class="btn btn-send" (click)="sendEmail()" [disabled]="email.invalid">Send</button>
+      <button class="btn btn-cancel" (click)="cancelEmail()">Cancel</button>
     </div>
   </div>
 </div>
@@ -41,7 +46,6 @@
 </body>
 
 <footer class="blockquote-footer text-end">
-  Created by <a href="https://github.com/baderbenlhachemi">Bader Eddine Ben-Lhachemi</a>
+  Created by <a href="https://github.com/baderbenlhachemi" target="_blank">Bader Eddine Ben-Lhachemi</a>
 </footer>
-
 </html>
