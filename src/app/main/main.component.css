@@ -8,12 +8,13 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
+  position: relative;
 }
 
 .container {
   max-width: 95%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* Increased opacity for better readability */
+  background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   text-align: center;
@@ -158,6 +159,24 @@ button:hover {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+}
+
+.icon-links {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
 }
 
 .warning {
