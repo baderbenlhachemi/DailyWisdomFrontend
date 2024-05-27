@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { QuoteService } from './quote.service';
+import { QuoteService } from './service/quote/quote.service';
 
 
 @NgModule({

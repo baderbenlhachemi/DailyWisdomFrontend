@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}">
 <div class="container mt-4">
   <!-- Notification Alert -->
   <div id="backendAlert" class="alert alert-info alert-dismissible fade show" role="alert">

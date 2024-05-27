@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {QuoteService} from '../quote.service';
+import {QuoteService} from '../service/quote/quote.service';
 import {FormControl, Validators} from '@angular/forms';
 import Swal from 'sweetalert2';
 import * as bootstrap from 'bootstrap';
+import {ImageService} from "../service/image/image.service";
 
 @Component({
   selector: 'app-main',
@@ -11,14 +12,30 @@ import * as bootstrap from 'bootstrap';
 })
 export class MainComponent implements OnInit {
 
-  quote: any;
   email = new FormControl('', [Validators.required, Validators.email]);
   emailZoneActive: boolean = false;
+  imageUrl: string = '';
+  quote: any;
 
-  constructor(private quoteService: QuoteService) { }
+  constructor(
+    private imageService: ImageService,
+    private quoteService: QuoteService
+  ) { }
 
   ngOnInit() {
+    this.loadRandomImage();
     this.autoDismissAlert();
+  }
+
+  loadRandomImage(): void {
+    this.imageService.getRandomImage().subscribe(
+      (data) => {
+        this.imageUrl = data.urls.regular;
+      },
+      (error) => {
+        console.error('Error fetching image from Unsplash', error);
+      }
+    );
   }
 
   autoDismissAlert() {

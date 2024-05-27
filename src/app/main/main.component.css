@@ -1,7 +1,8 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('https://source.unsplash.com/random/1920x1080/?nature,water') no-repeat center center fixed;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #fff;
   min-height: 100vh;
   display: flex;
