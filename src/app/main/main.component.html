@@ -29,12 +29,12 @@
     <button class="btn btn-email" (click)="toggleEmailZone()">Email to a Friend</button>
     <div class="email-zone" [ngClass]="{ 'active': emailZoneActive }">
       <div class="email-input-container">
-        <input type="email" class="form-control" placeholder="Friend's Email" [formControl]="email">
-        <div *ngIf="email.errors?.['required']" class="warning">
-          Email is required.
+        <input type="email" class="form-control" placeholder="Friend's Email" [formControl]="email" [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched), 'is-valid': email.valid && (email.dirty || email.touched)}">
+        <div *ngIf="email.errors?.['required']" class="error-message">
+          <i class="fas fa-exclamation-circle"></i> Email is required.
         </div>
-        <div *ngIf="email.errors?.['email']" class="warning">
-          Invalid email.
+        <div *ngIf="email.errors?.['email']" class="error-message">
+          <i class="fas fa-exclamation-circle"></i> Invalid email.
         </div>
       </div>
       <button class="btn btn-send" (click)="sendEmail()" [disabled]="email.invalid">Send</button>

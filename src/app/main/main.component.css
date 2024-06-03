@@ -6,6 +6,7 @@ body {
   color: #fff;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -20,6 +21,7 @@ body {
   border-radius: 15px;
   text-align: center;
   overflow: auto;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -138,9 +140,12 @@ button:hover {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.email-input-container input:focus {
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.email-input-container input.is-invalid {
+  border-color: #dc3545;
+}
+
+.email-input-container input.is-valid {
+  border-color: #28a745;
 }
 
 .email-zone {
@@ -162,29 +167,17 @@ button:hover {
   margin: 0 auto;
 }
 
-.icon-links {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.icon {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-}
-
-.warning {
+.error-message {
   color: #dc3545;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-top: 5px;
   text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.error-message i {
+  margin-right: 5px;
 }
 
 @media (max-width: 768px) {
@@ -201,4 +194,22 @@ button:hover {
   .email-input-container {
     width: 90%;
   }
+}
+
+.icon-links {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
 }

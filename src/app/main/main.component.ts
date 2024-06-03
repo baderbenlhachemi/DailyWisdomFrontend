@@ -82,6 +82,8 @@ export class MainComponent implements OnInit {
         }
       );
     } else {
+      this.email.markAsTouched();
+      this.email.markAsDirty();
       Swal.fire({
         icon: 'error',
         title: 'Error',
